@@ -51,7 +51,7 @@
 
       "org/gnome/shell/extensions/dash2dock-lite" = {
         apps-icon = false;
-        animation-magnify = 0.20;
+        animation-magnify = 0.25;
         mounted-icon = true;
         trash-icon = true;
         border-thickness = 0;
@@ -66,6 +66,8 @@
         lamp-app-animation = true;
         separator-thickness = 1;
         separator-color = "(1.0, 1.0, 1.0, 0.6)";
+        animation-fps = 1;
+        overview-transparent-background = true;
       };
     };
   };
