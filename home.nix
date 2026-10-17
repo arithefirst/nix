@@ -5,7 +5,7 @@
   imports = [
     ./programs/fastfetch.nix
     ./programs/ghostty.nix
-    ./programs/gnome.nix
+    ./programs/dconf.nix
   ];
 
   home.file.".background-image".source = ./pablo.jpg;
