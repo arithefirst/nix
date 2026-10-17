@@ -43,9 +43,14 @@
 
     git = {
       enable = true;
-      settings.user = {
-        name = "April Hall";
-        email = "ari@arithefirst.com";
+      settings = {
+        user = {
+          name = "April Hall";
+          email = "ari@arithefirst.com";
+        };
+        core = {
+          editor = "nvim";
+        };
       };
     };
 
