@@ -101,6 +101,7 @@
      cowsay
      lolcat
      sl
+     timg
    ];
 
   # Shell Configuration

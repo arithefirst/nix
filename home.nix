@@ -6,13 +6,16 @@
     ./programs/fastfetch.nix
     ./programs/ghostty.nix
     ./programs/dconf.nix
+    ./wallpaper.xml.nix
   ];
 
-  home.file.".background-image".source = ./pablo.jpg;
   home.stateVersion = "26.05";
   home.sessionVariables = {
     TERMINAL = "ghostty";
   };
+
+  home.file."Pictures/Wallpapers".source = 
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/wallpapers";
 
   # -------
   #  PKGS

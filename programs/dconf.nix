@@ -42,13 +42,6 @@
         ];
       };
 
-      "org/gnome/desktop/background" = {
-        color-shading-type = "solid";
-        picture-options = "zoom";
-        picture-uri = "file://" + builtins.toPath config.home.homeDirectory + "/.background-image";
-        picture-uri-dark = "file://" + builtins.toPath config.home.homeDirectory + "/.background-image";
-      };
-
       "org/gnome/shell/extensions/dash2dock-lite" = {
         apps-icon = false;
         animation-magnify = 0.25;
