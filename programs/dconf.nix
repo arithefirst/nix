@@ -32,6 +32,8 @@
         close = [ "<Super>c" ];
       };
 
+      # Extensions & Icons
+
       "org/gnome/shell" = {
         disable-user-extensions = false;
         always-show-log-out = true;
@@ -40,6 +42,10 @@
           pkgs.gnomeExtensions.dash2dock-lite.extensionUuid
           pkgs.gnomeExtensions.blur-my-shell.extensionUuid
         ];
+      };
+
+      "org/gnome/desktop/interface" = {
+        icon-theme = "WhiteSur";
       };
 
       "org/gnome/shell/extensions/dash2dock-lite" = {
