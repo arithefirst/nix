@@ -41,11 +41,24 @@
           pkgs.gnomeExtensions.compiz-alike-magic-lamp-effect.extensionUuid
           pkgs.gnomeExtensions.dash2dock-lite.extensionUuid
           pkgs.gnomeExtensions.blur-my-shell.extensionUuid
+          pkgs.gnomeExtensions.logo-menu.extensionUuid
         ];
       };
 
       "org/gnome/desktop/interface" = {
         icon-theme = "WhiteSur";
+      };
+
+      "org/gnome/shell/extensions/Logo-menu" = {
+        menu-button-icon-click-type = 2;
+        menu-button-icon-image = 23;
+        menu-button-icon-size = 20;
+        menu-button-terminal = "ghostty";
+        hide-forcequit = true;
+        hide-icon-shadow = true;
+        menu-button-system-monitor = "ghostty -e btop";
+        hide-softwarecentre = false;
+        menu-button-software-center = "firefox 'https://search.nixos.org/packages'";
       };
 
       "org/gnome/shell/extensions/dash2dock-lite" = {

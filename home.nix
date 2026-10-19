@@ -27,11 +27,13 @@
     spotify
     vscodium
     gh
+    btop
 
     # Gnome Extensions
     gnomeExtensions.compiz-alike-magic-lamp-effect
     gnomeExtensions.dash2dock-lite
     gnomeExtensions.blur-my-shell
+    gnomeExtensions.logo-menu
     whitesur-icon-theme
   ];
 
