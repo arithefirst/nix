@@ -32,6 +32,10 @@
         close = [ "<Super>c" ];
       };
 
+      "org/gnome/shell/keybindings" = {
+        show-screenshot-ui = [ "<Super><Shift>s" ];
+      };
+
       # Extensions & Icons
 
       "org/gnome/shell" = {
