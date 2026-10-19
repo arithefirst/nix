@@ -56,7 +56,6 @@
     gnome-contacts
     gnome-maps
     clapper # video player (replacing it with vlc)
-    loupe
     decibels
     simple-scan # document scanner thing
     gnome-music # vlc works great for this sooo
