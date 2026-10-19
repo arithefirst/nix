@@ -3,10 +3,13 @@
 {
 
   imports = [
+    # Program Configs
     ./programs/fastfetch.nix
     ./programs/ghostty.nix
-    ./programs/dconf.nix
-    ./wallpaper.xml.nix
+
+    # Other Configs
+    ./configs/dconf.nix
+    ./configs/wallpaper.xml.nix
   ];
 
   home.stateVersion = "26.05";

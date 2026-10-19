@@ -6,7 +6,7 @@
 }:
 
 let
-  wallpaperDir = ./wallpapers;
+  wallpaperDir = ../wallpapers;
 
   dirContents = builtins.readDir wallpaperDir;
   generateWallpaperXml =
