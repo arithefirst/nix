@@ -48,6 +48,29 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
+  # Exclude some of the GNOME Bloat that I don't want 
+  environment.gnome.excludePackages = with pkgs; [
+    epiphany # gnome browser
+    geary # gnome mail app
+    gnome-calendar
+    gnome-contacts
+    gnome-maps
+    clapper # video player (replacing it with vlc)
+    loupe
+    decibels
+    simple-scan # document scanner thing
+    gnome-music # vlc works great for this sooo
+    gnome-weather
+    gnome-system-monitor # i prefer btop++
+    gnome-clocks # i think this i way too niche use to have as an app; a website works fine
+    gnome-calculator # again, desmos or something would be 10x better and not take up space
+    gnome-tour
+    gnome-user-docs
+    papers # document viewer, browser works fine
+    gnome-text-editor
+    gnome-console
+  ];
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -102,6 +125,7 @@
      lolcat
      sl
      timg
+     vlc
    ];
 
   # Shell Configuration
