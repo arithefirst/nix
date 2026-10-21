@@ -141,6 +141,11 @@
     '';
 
     shellAliases = {
+      rebuild-nix = ''
+        echo "$ sudo nixos-rebuild switch --flake ~/nixos-config/#$(hostname)"
+        echo
+        sudo nixos-rebuild switch --flake ~/nixos-config/#$(hostname)
+      '';
       ls = "eza --color=always --git --icons=always --octal-permissions";
       vim = "nvim";
       code = "codium";
