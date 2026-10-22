@@ -8,12 +8,17 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs =
-    { nixpkgs, home-manager, nixos-hardware, ... }@inputs:
+    {
+      nixpkgs,
+      home-manager,
+      nixos-hardware,
+      ...
+    }@inputs:
     let
       # Home manager config lives here so i dont need to redefine it for all device configs
       sharedHomeManager = {
@@ -34,12 +39,15 @@
         nixos = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./configuration.nix 
+            ./configuration.nix
             sharedHomeManager
 
-            ({config, pkgs, ...}: {
-              networking.hostName = "nixos";
-            })
+            (
+              { config, pkgs, ... }:
+              {
+                networking.hostName = "nixos";
+              }
+            )
           ];
         };
 
@@ -47,15 +55,19 @@
         framework = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./configuration.nix 
+            ./configuration.nix
             sharedHomeManager
 
-            ({config, pkgs, ...}: {
-              networking.hostName = "framework";
-            })
+            (
+              { config, pkgs, ... }:
+              {
+                networking.hostName = "framework";
+              }
+            )
 
             # framework 12 specific hardware stuff:
-            nixos-hardware.nixosModules.framework-12-13th-gen-intel {
+            nixos-hardware.nixosModules.framework-12-13th-gen-intel
+            {
               boot.initrd.kernelModules = [ "pinctrl_tigerlake" ];
               hardware.sensor.iio.enable = true;
             }

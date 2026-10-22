@@ -2,13 +2,11 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, pkgs, ... }:
-
-{
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+{ config, pkgs, ... }: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -46,7 +44,7 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
-  # Exclude some of the GNOME Bloat that I don't want 
+  # Exclude some of the GNOME Bloat that I don't want
   environment.gnome.excludePackages = with pkgs; [
     epiphany # gnome browser
     geary # gnome mail app
@@ -96,7 +94,10 @@
   users.users."ari" = {
     isNormalUser = true;
     description = "April Hall";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   # Install firefox.
@@ -104,29 +105,32 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
+
   # Enable Flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
-   environment.systemPackages = with pkgs; [
-     neovim
-     git
-     wget
-     zsh
-     eza
-     pipes
-     bat
-     cowsay
-     lolcat
-     sl
-     timg
-     vlc
-   ];
+  environment.systemPackages = with pkgs; [
+    neovim
+    git
+    wget
+    zsh
+    eza
+    pipes
+    bat
+    cowsay
+    lolcat
+    sl
+    timg
+    vlc
+  ];
 
   # Shell Configuration
-  users.defaultUserShell=pkgs.zsh;
+  users.defaultUserShell = pkgs.zsh;
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -152,11 +156,14 @@
       pipes = "pipes.sh";
       cat = "bat --theme='Catppuccin Mocha'";
     };
-  
+
     ohMyZsh = {
       enable = true;
       theme = "bira";
-      plugins = ["git" "sudo"];
+      plugins = [
+        "git"
+        "sudo"
+      ];
     };
 
   };
@@ -181,9 +188,21 @@
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = [ "Noto Serif"  "Noto Serif CJK SC" "Liberation Serif" ];
-        sansSerif = [ "Noto Sans" "Noto Sans CJK SC" "Liberation Sans" ];
-        monospace = [ "Fira Code" "Noto Sans Mono" "Noto Sans Mono CJK SC" ];
+        serif = [
+          "Noto Serif"
+          "Noto Serif CJK SC"
+          "Liberation Serif"
+        ];
+        sansSerif = [
+          "Noto Sans"
+          "Noto Sans CJK SC"
+          "Liberation Sans"
+        ];
+        monospace = [
+          "Fira Code"
+          "Noto Sans Mono"
+          "Noto Sans Mono CJK SC"
+        ];
         emoji = [ "Noto Color Emoji" ];
       };
 
@@ -202,7 +221,6 @@
     "x-scheme-handler/about" = "firefox.desktop";
     "x-scheme-handler/unknown" = "firefox.desktop";
   };
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

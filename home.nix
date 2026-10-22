@@ -1,6 +1,4 @@
-{ config, pkgs, ... }:
-
-{
+{ config, pkgs, ... }: {
 
   imports = [
     # Program Configs
@@ -17,7 +15,7 @@
     TERMINAL = "ghostty";
   };
 
-  home.file."Pictures/Wallpapers".source = 
+  home.file."Pictures/Wallpapers".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/wallpapers";
 
   # -------
@@ -74,7 +72,6 @@
     # Make sure home manager is enabled
     home-manager.enable = true;
   };
-
 
   xdg = {
     terminal-exec = {
