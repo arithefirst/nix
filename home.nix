@@ -29,6 +29,8 @@
     vscodium
     gh
     btop
+    mullvad-vpn
+    rnote
 
     # Gnome Extensions
     gnomeExtensions.compiz-alike-magic-lamp-effect

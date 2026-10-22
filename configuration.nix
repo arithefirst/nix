@@ -75,6 +75,9 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Enable Mullvad VPN System Service
+  services.mullvad-vpn.enable = true;
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
