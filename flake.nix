@@ -18,11 +18,13 @@
       # Home manager config lives here so i dont need to redefine it for all device configs
       sharedHomeManager = {
         imports = [ home-manager.nixosModules.home-manager ];
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.backupFileExtension = "bak";
-        home-manager.extraSpecialArgs = { inherit inputs; };
-        home-manager.users.ari = import ./home.nix;
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          backupFileExtension = "bak";
+          extraSpecialArgs = { inherit inputs; };
+          users.ari = import ./home.nix;
+        };
       };
     in
     {
@@ -34,6 +36,10 @@
           modules = [
             ./configuration.nix 
             sharedHomeManager
+
+            ({config, pkgs, ...}: {
+              networking.hostName = "nixos";
+            })
           ];
         };
 
@@ -43,6 +49,10 @@
           modules = [
             ./configuration.nix 
             sharedHomeManager
+
+            ({config, pkgs, ...}: {
+              networking.hostName = "framework";
+            })
 
             # framework 12 specific hardware stuff:
             nixos-hardware.nixosModules.framework-12-13th-gen-intel {
