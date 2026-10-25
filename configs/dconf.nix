@@ -32,7 +32,7 @@
       };
 
       "org/gnome/shell/keybindings" = {
-        show-screenshot-ui = [ "<Super><Shift>s" ];
+        show-screenshot-ui = [ "<Super><Shift>s" "Print" ];
       };
 
       # Extensions & Icons
