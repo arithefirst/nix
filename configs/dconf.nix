@@ -50,6 +50,7 @@
 
       "org/gnome/desktop/interface" = {
         icon-theme = "WhiteSur";
+        clock-format = "12h";
       };
 
       "org/gnome/shell/extensions/Logo-menu" = {
