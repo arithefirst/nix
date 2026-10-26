@@ -130,6 +130,7 @@
     sl
     timg
     vlc
+    python314
   ];
 
   # Shell Configuration
