@@ -143,6 +143,16 @@
 
     interactiveShellInit = ''
       ENABLE_CORRECTION="true"
+
+      nix() {
+          if [[ "$1" == "rebuild" ]]; then
+              echo -e "\033[1A\033[K╰─\033[1m$\033[22m \033[0;32msudo nixos-rebuild\033[0m switch --flake ~/nixos-config/#$(hostname)\n"
+              sudo nixos-rebuild switch --flake ~/nixos-config/#$(hostname)
+          else
+              command nix "$@"
+          fi
+      }
+
       fastfetch
     '';
 
