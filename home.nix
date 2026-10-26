@@ -37,6 +37,7 @@
     gnomeExtensions.dash2dock-lite
     gnomeExtensions.blur-my-shell
     gnomeExtensions.logo-menu
+    gnomeExtensions.copyous
     whitesur-icon-theme
   ];
 
