@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ lib, pkgs, config, ... }:
 {
   dconf = {
     enable = true;
@@ -57,6 +57,7 @@
           pkgs.gnomeExtensions.compiz-alike-magic-lamp-effect.extensionUuid
           pkgs.gnomeExtensions.dash2dock-lite.extensionUuid
           pkgs.gnomeExtensions.blur-my-shell.extensionUuid
+          pkgs.gnomeExtensions.color-picker.extensionUuid
           pkgs.gnomeExtensions.logo-menu.extensionUuid
           pkgs.gnomeExtensions.copyous.extensionUuid
         ];
@@ -99,6 +100,22 @@
         animation-fps = 1;
         overview-transparent-background = true;
       };
+
+      "org/gnome/shell/extensions/color-picker" = {
+        auto-copy = true;
+        color-picker-shortcut = ["<Shift><Super>c"];
+        enable-dbus = false;
+        enable-format = true;
+        enable-notify = true;
+        enable-preview = true;
+        enable-shortcut = true;
+        enable-sound = false;
+        enable-systray = false;
+        format-menu = false;
+	      persistent-mode = false;
+      };
+
+      # clipboard
 
       "org/gnome/shell/extensions/copyous" = {
         auto-hide-search = true;
