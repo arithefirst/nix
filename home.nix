@@ -31,6 +31,7 @@
     btop
     mullvad-vpn
     rnote
+    bun
 
     # Gnome Extensions
     gnomeExtensions.compiz-alike-magic-lamp-effect

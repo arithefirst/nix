@@ -133,6 +133,20 @@
     python314
   ];
 
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      vips
+      glib      
+      stdenv.cc.cc
+      zlib
+      openssl
+      libuuid
+      fontconfig
+    ];
+  };
+
+
   # Shell Configuration
   users.defaultUserShell = pkgs.zsh;
   programs.zsh = {
@@ -161,6 +175,7 @@
         echo -e "\033[1A\033[K╰─\033[1m$\033[22m \033[0;32msudo nixos-rebuild\033[0m switch --flake ~/nixos-config/#$(hostname)\n"
         sudo nixos-rebuild switch --flake ~/nixos-config/#$(hostname)
       '';
+      bun = "LD_LIBRARY_PATH=\"$(nix-build '<nixpkgs>' -A stdenv.cc.cc.lib --no-out-link)/lib\" bun";
       ls = "eza --color=always --git --icons=always --octal-permissions";
       vim = "nvim";
       code = "codium";
