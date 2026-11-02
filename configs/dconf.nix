@@ -102,6 +102,17 @@
         overview-transparent-background = true;
       };
 
+      "org/gnome/shell/extensions/blur-my-shell/applications" = {
+        blur = true;
+        dynamic-opacity = false;
+        whitelist = [ "com.mitchellh.ghostty" ];
+        static-blur = false;
+        corner-when-maximized = false;
+        brightness = 1.0;
+        opacity = 255;
+        sigma = 10;
+      };
+
       "org/gnome/shell/extensions/color-picker" = {
         auto-copy = true;
         color-picker-shortcut = ["<Shift><Super>c"];
