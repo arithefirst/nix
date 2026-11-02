@@ -103,9 +103,6 @@
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -131,6 +128,8 @@
     timg
     vlc
     python314
+    chromium
+    imagemagick
   ];
 
   programs.nix-ld = {
@@ -243,11 +242,11 @@
   # XDG Stuffs
   xdg.mime.enable = true;
   xdg.mime.defaultApplications = {
-    "text/html" = "firefox.desktop";
-    "x-scheme-handler/http" = "firefox.desktop";
-    "x-scheme-handler/https" = "firefox.desktop";
-    "x-scheme-handler/about" = "firefox.desktop";
-    "x-scheme-handler/unknown" = "firefox.desktop";
+    "text/html" = "chromium.desktop";
+    "x-scheme-handler/http" = "chromium.desktop";
+    "x-scheme-handler/https" = "chromium.desktop";
+    "x-scheme-handler/about" = "chromium.desktop";
+    "x-scheme-handler/unknown" = "chromium.desktop";
   };
 
   # Some programs need SUID wrappers, can be configured further or are

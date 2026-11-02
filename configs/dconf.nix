@@ -78,7 +78,7 @@
         hide-icon-shadow = true;
         menu-button-system-monitor = "ghostty -e btop";
         hide-softwarecentre = false;
-        menu-button-software-center = "firefox 'https://search.nixos.org/packages'";
+        menu-button-software-center = "xdg-open 'https://search.nixos.org/packages'";
       };
 
       "org/gnome/shell/extensions/dash2dock-lite" = {
