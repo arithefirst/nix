@@ -51,7 +51,7 @@
     gnome-calendar
     gnome-contacts
     gnome-maps
-    clapper # video player (replacing it with vlc)
+    showtime
     decibels
     simple-scan # document scanner thing
     gnome-music # vlc works great for this sooo
@@ -239,14 +239,24 @@
     };
   };
 
-  # XDG Stuffs
+  # default apps
   xdg.mime.enable = true;
   xdg.mime.defaultApplications = {
+    # browser
     "text/html" = "chromium.desktop";
     "x-scheme-handler/http" = "chromium.desktop";
     "x-scheme-handler/https" = "chromium.desktop";
     "x-scheme-handler/about" = "chromium.desktop";
     "x-scheme-handler/unknown" = "chromium.desktop";
+
+    # video player
+    "video/mp4" = "vlc.desktop";
+    "video/x-matroska" = "vlc.desktop"; # .mkv
+    "video/webm" = "vlc.desktop";
+    "video/quicktime" = "vlc.desktop"; # .mov
+    "video/x-msvideo" = "vlc.desktop"; # .avi
+    "video/mpeg" = "vlc.desktop";
+    "video/ogg" = "vlc.desktop";
   };
 
   # Some programs need SUID wrappers, can be configured further or are

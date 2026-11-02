@@ -47,6 +47,16 @@
   # Configs
   # -------
 
+  # vlc config
+  home.file.".config/vlc/vlcrc".text = ''
+    [qt] 
+    qt-privacy-ask=0
+    qt-dark-palette=1
+
+    [core] 
+    metadata-network-access=1
+  '';
+
   gtk = {
     enable = true;
     iconTheme = {
