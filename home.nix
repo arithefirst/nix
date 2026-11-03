@@ -53,8 +53,12 @@
     qt-privacy-ask=0
     qt-dark-palette=1
 
+    [avcodec] 
+    avcodec-hw=none
+
     [core] 
     metadata-network-access=1
+    vout=any
   '';
 
   gtk = {
