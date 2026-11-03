@@ -28,7 +28,7 @@
           useUserPackages = true;
           backupFileExtension = "bak";
           extraSpecialArgs = { inherit inputs; };
-          users.ari = import ./home.nix;
+          users.ari = import ./home-manager/home.nix;
         };
       };
     in
