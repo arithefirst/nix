@@ -1,6 +1,9 @@
 { config, pkgs, ... }: {
 
   imports = [
+    # Pkgs
+    ./pkgs.nix
+    
     # Program Configs
     ./programs/fastfetch.nix
     ./programs/ghostty.nix
@@ -17,31 +20,6 @@
 
   home.file."Pictures/Wallpapers".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/wallpapers";
-
-  # -------
-  #  PKGS
-  # -------
-
-  home.packages = with pkgs; [
-    ghostty
-    fastfetch
-    spotify
-    vscodium
-    gh
-    btop
-    mullvad-vpn
-    rnote
-    bun
-
-    # Gnome Extensions
-    gnomeExtensions.compiz-alike-magic-lamp-effect
-    gnomeExtensions.dash2dock-lite
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.color-picker
-    gnomeExtensions.logo-menu
-    gnomeExtensions.copyous
-    whitesur-icon-theme
-  ];
 
   # -------
   # Configs
