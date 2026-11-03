@@ -1,4 +1,9 @@
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 {
   dconf = {
     enable = true;
@@ -115,7 +120,7 @@
 
       "org/gnome/shell/extensions/color-picker" = {
         auto-copy = true;
-        color-picker-shortcut = ["<Shift><Super>c"];
+        color-picker-shortcut = [ "<Shift><Super>c" ];
         enable-dbus = false;
         enable-format = true;
         enable-notify = true;
@@ -124,7 +129,7 @@
         enable-sound = false;
         enable-systray = false;
         format-menu = false;
-	      persistent-mode = false;
+        persistent-mode = false;
       };
 
       # clipboard

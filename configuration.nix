@@ -130,13 +130,14 @@
     python314
     chromium
     imagemagick
+    nixfmt
   ];
 
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
       vips
-      glib      
+      glib
       stdenv.cc.cc
       zlib
       openssl
@@ -144,7 +145,6 @@
       fontconfig
     ];
   };
-
 
   # Shell Configuration
   users.defaultUserShell = pkgs.zsh;

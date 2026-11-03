@@ -3,7 +3,7 @@
   imports = [
     # Pkgs
     ./pkgs.nix
-    
+
     # Program Configs
     ./programs/fastfetch.nix
     ./programs/ghostty.nix

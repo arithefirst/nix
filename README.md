@@ -6,6 +6,7 @@ April Hall's beautiful NixOS config
 
 - `feat`: The commit adds a feature that was not available or not enabled previously.
 - `fix`:  The Commit changes, adjusts, or fixes any part of the config without adding a new feature.
+- `style`: Just formats something or changes code style
 - `pkgs`: The commit only modifies the packages installed on the system.
 - `wall`: The commit only adds new wallpapers to the `./wallpapers/` directory.
 - `gh`: The commit adds or changes code that only affects the GitHub repository for the config, and not the config itself.
