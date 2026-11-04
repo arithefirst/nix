@@ -23,6 +23,7 @@
       # Home manager config lives here so i dont need to redefine it for all device configs
       sharedHomeManager = {
         imports = [ home-manager.nixosModules.home-manager ];
+
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
@@ -42,12 +43,7 @@
             ./configuration.nix
             sharedHomeManager
 
-            (
-              { config, pkgs, ... }:
-              {
-                networking.hostName = "nixos";
-              }
-            )
+            ({ ... }: { networking.hostName = "nixos"; })
           ];
         };
 
@@ -58,12 +54,7 @@
             ./configuration.nix
             sharedHomeManager
 
-            (
-              { config, pkgs, ... }:
-              {
-                networking.hostName = "framework";
-              }
-            )
+            ({ ... }: { networking.hostName = "framework"; })
 
             # framework 12 specific hardware stuff:
             nixos-hardware.nixosModules.framework-12-13th-gen-intel

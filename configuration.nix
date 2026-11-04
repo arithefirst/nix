@@ -131,6 +131,7 @@
     chromium
     imagemagick
     nixfmt
+    nixd
   ];
 
   programs.nix-ld = {

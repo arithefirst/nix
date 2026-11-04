@@ -7,6 +7,7 @@
     # Program Configs
     ./programs/fastfetch.nix
     ./programs/ghostty.nix
+    ./programs/vscodium.nix
 
     # Other Configs
     ./configs/dconf.nix
