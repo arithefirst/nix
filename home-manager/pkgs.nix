@@ -10,6 +10,8 @@
     rnote
     bun
     musescore
+    rawtherapee
+    anki
 
     # Gnome Extensions
     gnomeExtensions.compiz-alike-magic-lamp-effect
