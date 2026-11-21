@@ -12,6 +12,7 @@
     musescore
     rawtherapee
     anki
+    prismlauncher
 
     # Gnome Extensions
     gnomeExtensions.compiz-alike-magic-lamp-effect
