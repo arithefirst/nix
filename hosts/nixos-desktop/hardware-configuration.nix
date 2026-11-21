@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }:
@@ -16,19 +15,21 @@
 
   boot.initrd.availableKernelModules = [
     "xhci_pci"
+    "ahci"
     "nvme"
+    "usbhid"
   ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/8dc78d1f-dab4-44e9-9540-8c9ad4e8a7d2";
+    device = "/dev/disk/by-uuid/6082e583-f7d9-4358-ad16-b739f045a42f";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/DD4C-D463";
+    device = "/dev/disk/by-uuid/F956-6A67";
     fsType = "vfat";
     options = [
       "fmask=0077"

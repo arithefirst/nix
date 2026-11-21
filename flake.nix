@@ -35,15 +35,12 @@
     in
     {
       nixosConfigurations = {
-        # General configuration for hardware that dosen't need
-        # specific drivers and stuff
-        nixos = nixpkgs.lib.nixosSystem {
+        nixos-desktop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./configuration.nix
+            ./hosts/nixos-desktop
             sharedHomeManager
-
-            ({ ... }: { networking.hostName = "nixos"; })
           ];
         };
 
@@ -52,16 +49,11 @@
           system = "x86_64-linux";
           modules = [
             ./configuration.nix
+            ./hosts/framework
             sharedHomeManager
-
-            ({ ... }: { networking.hostName = "framework"; })
 
             # framework 12 specific hardware stuff:
             nixos-hardware.nixosModules.framework-12-13th-gen-intel
-            {
-              boot.initrd.kernelModules = [ "pinctrl_tigerlake" ];
-              hardware.sensor.iio.enable = true;
-            }
           ];
         };
       };
