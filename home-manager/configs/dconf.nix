@@ -54,6 +54,7 @@
         always-show-log-out = true;
         enabled-extensions = [
           pkgs.gnomeExtensions.compiz-alike-magic-lamp-effect.extensionUuid
+          pkgs.gnomeExtensions.multi-monitor-bar.extensionUuid
           pkgs.gnomeExtensions.dash2dock-lite.extensionUuid
           pkgs.gnomeExtensions.blur-my-shell.extensionUuid
           pkgs.gnomeExtensions.color-picker.extensionUuid
@@ -99,6 +100,7 @@
         separator-color = "(1.0, 1.0, 1.0, 0.6)";
         animation-fps = 1;
         overview-transparent-background = true;
+        multi-monitor-preference = 1;
       };
 
       "org/gnome/shell/extensions/blur-my-shell/applications" = {
