@@ -13,6 +13,7 @@
     rawtherapee
     anki
     prismlauncher
+    steam
 
     # Gnome Extensions
     gnomeExtensions.compiz-alike-magic-lamp-effect
